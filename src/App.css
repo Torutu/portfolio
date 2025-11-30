@@ -3,6 +3,8 @@
   --secondary-dark-color: #1b4973;
   --secondary-dark-color-fade: #1b487367; /* <- SIX SEVEEEN */
   --primary-light-color:#52cbbe;
+  --header-primary-light-color: #f0f0f0;
+  --font-family: 'IBM Plex Mono', monospace;
 }
 
 .App {
