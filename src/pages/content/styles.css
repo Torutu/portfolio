@@ -1,0 +1,59 @@
+@import '../../App.css';
+
+/* right side */
+.rightSide,.leftSide{
+  color: var(--primary-light-color);
+}
+
+.rightSide{
+  padding-top:0px !important;
+  padding-bottom:0px !important;
+  border: 2px solid var(--primary-light-color);
+}
+
+.rightSide__h{
+  margin: 0px !important;
+  padding: 10% 30%!important;
+  color: white !important;
+}
+
+.rightSide__inner{
+ background-color: var(--secondary-dark-color-fade);
+ width:90%;
+ height:100%;
+ margin-left: 5%;
+}
+
+/* left side */
+.leftSide{
+  border: 2px solid var(--primary-light-color);
+}
+
+.leftSide__inner{
+ background-color: var(--secondary-dark-color-fade);
+ width:80%;
+ height:80%;
+ margin-left: 10%;
+ margin-top: 10%;
+}
+
+.leftSide__h{
+  padding: 10% 30%;
+}
+
+/* footer */
+.footer{
+  border: 2px solid var(--primary-light-color);
+}
+
+.footer__inner{
+ /* background-color: var(--secondary-dark-color); */
+ height: 100%;
+}
+
+.footer__h{
+  color: var(--primary-light-color);
+  padding-left : 25%;
+  margin: 0px !important;
+}
+
