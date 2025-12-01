@@ -23,7 +23,7 @@ export function LeftSide() {
             <h1 className="leftSide__h">{introText}<strong>{introText2}</strong></h1>
             {lineBreak}
             {/* this part of the each page changes */}
-            <p className="leftSide__p">{pContent}</p>
+            {pContent}
             {/* until here */}
           </div>
           <div className="leftSide__inner_lower">
