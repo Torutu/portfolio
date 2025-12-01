@@ -100,7 +100,7 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-auto-rows: 20%;
-  height: 80%;
+  max-height: 75%;
   max-height: calc(5 * 20%);
   overflow-y: auto;
   padding-bottom: 2%;
@@ -127,6 +127,29 @@
   margin-left: 2%;
   margin-right: 2%;
   height: 80%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.leftSide__menu_item_name{
+  grid-area: 1 / 1 / 3 / 2;
+  border-bottom: 2px solid var(--primary-light-color);
+  height: 100%;
+}
+
+.leftSide__menu_item_description{
+  grid-area: 1 / 2 / 3 / 3;
+  border-bottom: 2px solid var(--primary-light-color);
+  height: 100%;
+}
+
+.leftSide__menu_item_badges{
+  grid-area: 2 / 2 / 3 / 3;
+  border-bottom: 2px solid var(--primary-light-color);
+  height: 100%;
 }
 
 .leftSide__inner_lower{
