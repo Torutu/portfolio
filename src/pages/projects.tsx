@@ -1,5 +1,19 @@
 import { usePage } from "./utils/pageContext";
 
+const projects = [
+  { id: "project1", name: "Project 1", description: "Description", badges: "Badges" },
+  { id: "project2", name: "Project 2", description: "Description", badges: "Badges" },
+  { id: "project3", name: "Project 3", description: "Description", badges: "Badges" },
+  { id: "project4", name: "Project 4", description: "Description", badges: "Badges" },
+  { id: "project5", name: "Project 5", description: "Description", badges: "Badges" },
+  { id: "project6", name: "Project 6", description: "Description", badges: "Badges" },
+  { id: "project7", name: "Project 7", description: "Description", badges: "Badges" },
+  { id: "project8", name: "Project 8", description: "Description", badges: "Badges" },
+  { id: "project9", name: "Project 9", description: "Description", badges: "Badges" },
+  { id: "project10", name: "Project 10", description: "Description", badges: "Badges" },
+];
+
+
 export function LeftProjectsText() {
   const { setSelectedProject } = usePage();
 
@@ -10,56 +24,17 @@ export function LeftProjectsText() {
         projects, I enjoy pushing forward and learn along the way
       </p>
       <div className="leftSide__menu">
-        <div className="leftSide__menu_item" onClick={() => setSelectedProject("project1")}>
-            <div className="leftSide__menu_item_name">Project 1</div>
-            <div className="leftSide__menu_item_description">Description</div>
-            <div className="leftSide__menu_item_badges">Badges</div>
-        </div>
-        <div className="leftSide__menu_item" onClick={() => setSelectedProject("project2")}>
-            <div className="leftSide__menu_item_name">Project 2</div>
-            <div className="leftSide__menu_item_description">Description</div>
-            <div className="leftSide__menu_item_badges">Badges</div>
-        </div>
-        <div className="leftSide__menu_item" onClick={() => setSelectedProject("project3")}>
-            <div className="leftSide__menu_item_name">Project 3</div>
-            <div className="leftSide__menu_item_description">Description</div>
-            <div className="leftSide__menu_item_badges">Badges</div>
-        </div>
-        <div className="leftSide__menu_item" onClick={() => setSelectedProject("project4")}>
-            <div className="leftSide__menu_item_name">Project 4</div>
-            <div className="leftSide__menu_item_description">Description</div>
-            <div className="leftSide__menu_item_badges">Badges</div>
-        </div>
-        <div className="leftSide__menu_item" onClick={() => setSelectedProject("project5")}>
-            <div className="leftSide__menu_item_name">Project 5</div>
-            <div className="leftSide__menu_item_description">Description</div>
-            <div className="leftSide__menu_item_badges">Badges</div>
-        </div>
-        <div className="leftSide__menu_item" onClick={() => setSelectedProject("project6")}>
-            <div className="leftSide__menu_item_name">Project 6</div>
-            <div className="leftSide__menu_item_description">Description</div>
-            <div className="leftSide__menu_item_badges">Badges</div>
-        </div>
-        <div className="leftSide__menu_item" onClick={() => setSelectedProject("project7")}>
-            <div className="leftSide__menu_item_name">Project 7</div>
-            <div className="leftSide__menu_item_description">Description</div>
-            <div className="leftSide__menu_item_badges">Badges</div>
-        </div>
-        <div className="leftSide__menu_item" onClick={() => setSelectedProject("project8")}>
-            <div className="leftSide__menu_item_name">Project 8</div>
-            <div className="leftSide__menu_item_description">Description</div>
-            <div className="leftSide__menu_item_badges">Badges</div>
-        </div>
-        <div className="leftSide__menu_item" onClick={() => setSelectedProject("project9")}>
-            <div className="leftSide__menu_item_name">Project 9</div>
-            <div className="leftSide__menu_item_description">Description</div>
-            <div className="leftSide__menu_item_badges">Badges</div>
-        </div>
-        <div className="leftSide__menu_item" onClick={() => setSelectedProject("project10")}>
-            <div className="leftSide__menu_item_name">Project 10</div>
-            <div className="leftSide__menu_item_description">Description</div>
-            <div className="leftSide__menu_item_badges">Badges</div>
-        </div>
+        {projects.map((project) => (
+          <div
+            key={project.id}
+            className="leftSide__menu_item"
+            onClick={() => setSelectedProject(project.id)}
+          >
+            <div className="leftSide__menu_item_name">{project.name}</div>
+            <div className="leftSide__menu_item_description">{project.description}</div>
+            <div className="leftSide__menu_item_badges">{project.badges}</div>
+          </div>
+        ))}
       </div>
     </>
   );
