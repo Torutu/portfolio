@@ -1,5 +1,7 @@
-import { usePage } from "../pageContext";
-import { aboutMeText } from "../aboutMe";
+import { usePage } from "../utils/pageContext";
+import { leftAboutMeText } from "../aboutMe";
+import { LeftProjectsText } from "../projects";
+import { leftSkillsText } from "../skills";
 const introText = `Hello! I'm Waleed, a passionate`;
 const introText2 = ` software developer.`;
 const lineBreak = <svg width="100%" height="4">
@@ -11,10 +13,12 @@ export function LeftSide() {
 
   let pContent =
     page === "aboutMe"
-      ? aboutMeText
+      ? leftAboutMeText
       : page === "projects"
-      ? "Projects"
-      : "Skills";
+      ? <LeftProjectsText/>
+      : page === "skills"
+      ? leftSkillsText
+      : "";
 
   return (
     <div className="leftSide">
