@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
 :root{
   --primary-dark-color: #070d29;
   --secondary-dark-color: #1b4973;
@@ -5,6 +7,7 @@
   --primary-light-color:#52cbbe;
   --header-primary-light-color: #f0f0f0;
   --font-family: 'IBM Plex Mono', monospace;
+  --calm-font-family: 'Lexend', sans-serif;
 }
 
 .App {
