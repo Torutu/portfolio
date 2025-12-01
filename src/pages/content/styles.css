@@ -142,6 +142,15 @@
   grid-row-gap: 0px;
 }
 
+.leftSide__menu_item:hover {
+  background-color: var(--hover-color);
+}
+
+.leftSide__menu_item:active {
+  background-color: var(--hover-color);
+  transform: scale(0.98);
+}
+
 .leftSide__menu_item_name{
   font-family: var(--calm-font-family);
   font-weight: 600;
@@ -196,7 +205,7 @@
   margin-right: 2%;
   padding: 0.7rem 2rem;    /* adjust spacing around text */
   font-family: var(--calm-font-family);
-  font-weight: 700;
+  font-weight: 600;
   font-size: 1.0rem;
   background-color: var(--secondary-dark-color);
   color: var(--header-primary-light-color);
@@ -205,10 +214,10 @@
 }
 
 .leftSide__btn:hover {
-  background-color: var(--primary-dark-color);
+  background-color: var(--hover-color);
 }
 
 .leftSide__btn:active {
-  background-color: var(--primary-dark-color);
+  background-color: var(--hover-color);
   transform: scale(0.95);
 }

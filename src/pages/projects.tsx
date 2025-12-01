@@ -40,12 +40,16 @@ export function LeftProjectsText() {
   );
 }
 
-export const projectContent: Record<string, JSX.Element> = {
-  daggerforge: (
+const daggerforgeContent = (
     <>
       <h1>Daggerforge</h1>
       <p>This is my Daggerforge project description.</p>
     </>
+  );
+
+export const projectContent: Record<string, JSX.Element> = {
+  daggerforge: (
+    daggerforgeContent
   ),
   rulebookparser: (
     <>

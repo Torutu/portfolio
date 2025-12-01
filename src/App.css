@@ -6,6 +6,7 @@
   --secondary-dark-color-fade: #1b487367; /* <- SIX SEVEEEN */
   --primary-light-color:#52cbbe;
   --header-primary-light-color: #f0f0f0;
+  --hover-color: #52cbbe67;
   --font-family: 'IBM Plex Mono', monospace;
   --calm-font-family: 'Lexend', sans-serif;
 }
