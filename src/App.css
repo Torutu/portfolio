@@ -11,21 +11,37 @@
   --calm-font-family: 'Lexend', sans-serif;
 }
 
+
 .App {
-  background-color: var(--primary-dark-color);
+  background-color: hsla(228,68%,10%,1);
   background-image:
-  radial-gradient(at 46% 18%, var(--primary-dark-color) 0px, transparent 50%),
-  radial-gradient(at 44% 86%, var(--primary-dark-color) 0px, transparent 50%),
-  radial-gradient(at 45% 54%, var(--primary-dark-color) 0px, transparent 50%),
-  radial-gradient(at 86% 48%, var(--primary-dark-color) 0px, transparent 50%),
-  radial-gradient(at 82% 49%, hsla(188,39%,36%,1) 0px, transparent 50%),
-  radial-gradient(at 85% 54%, hsla(197,18%,21%,1) 0px, transparent 50%),
-  radial-gradient(at 86% 68%, hsla(122,12%,41%,1) 0px, transparent 50%),
-  radial-gradient(at 79% 34%, hsla(122,13%,41%,1) 0px, transparent 50%);
-  background-size: cover;
-  display: grid;
+    radial-gradient(at 47% 75%, hsla(228,68%,10%,1) 0px, transparent 50%),
+    radial-gradient(at 14% 76%, hsla(228,68%,10%,1) 0px, transparent 50%),
+    radial-gradient(at 15% 20%, hsla(228,68%,10%,1) 0px, transparent 50%),
+    radial-gradient(at 48% 20%, hsla(228,68%,10%,1) 0px, transparent 50%),
+    radial-gradient(at 2% 3%, hsla(207,60%,30%,0.58) 0px, transparent 50%),
+    radial-gradient(at 2% 96%, hsla(207,60%,30%,0.44) 0px, transparent 50%),
+    radial-gradient(at 86% 48%, hsla(208,61%,30%,1) 0px, transparent 50%),
+    radial-gradient(at 82% 49%, hsla(188,39%,36%,1) 0px, transparent 50%),
+    radial-gradient(at 4% 2%, hsla(207,63%,51%,0.77) 0px, transparent 50%),
+    radial-gradient(at 85% 54%, hsla(197,18%,21%,1) 0px, transparent 50%),
+    radial-gradient(at 86% 68%, hsla(122,12%,41%,1) 0px, transparent 50%),
+    radial-gradient(at 79% 34%, hsla(122,13%,41%,1) 0px, transparent 50%);
+  
+  background-size: 100% 100%;
+  animation: breatheScale 12s ease-in-out infinite;
+  
   height: 100%;
+  display: grid;
 }
+
+@keyframes breatheScale {
+  0%   { background-size: 100% 100%; }
+  50%  { background-size: 140% 140%; }
+  100% { background-size: 100% 100%; }
+}
+
+
 
 .App-logo {
   height: 40vmin;
