@@ -1,5 +1,6 @@
 import { JSX } from "react";
 import { usePage } from "./utils/pageContext";
+import { daggerforgeContent } from "./content/daggerforge";
 
 const projects = [
   { id: "daggerforge", name: "Daggerforge", description: "A tool that helps dungeon masters build session content fast.", badges: "Badges" },
@@ -37,20 +38,11 @@ export function LeftProjectsText() {
         ))}
       </div>
     </>
-  );
+  );  
 }
 
-const daggerforgeContent = (
-    <>
-      <h1>Daggerforge</h1>
-      <p>This is my Daggerforge project description.</p>
-    </>
-  );
-
 export const projectContent: Record<string, JSX.Element> = {
-  daggerforge: (
-    daggerforgeContent
-  ),
+  daggerforge: daggerforgeContent,
   rulebookparser: (
     <>
       <h1>Rulebook parser</h1>
