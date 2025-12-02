@@ -1,3 +1,5 @@
+/* https://www.csshero.org/mesher/ <- background made with*/ 
+
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
 :root{
@@ -39,6 +41,23 @@
   0%   { background-size: 100% 100%; }
   50%  { background-size: 140% 140%; }
   100% { background-size: 100% 100%; }
+}
+
+
+.page-transition {
+  animation: pageSwitch 0.5s ease;
+}
+
+@keyframes pageSwitch {
+  0% { 
+    opacity: 1;
+  }
+  50% {
+    background-color: black;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 

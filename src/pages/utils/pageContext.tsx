@@ -17,16 +17,32 @@ const PageContext = createContext<PageContextType>({
 export const PageProvider = ({ children }: any) => {
   const [page, setPage] = useState("aboutMe");
   const [selectedProject, setSelectedProject] = useState("");
+  const [animating, setAnimating] = useState(false);
+
+  const changePage = (newPage: string) => {
+    if (page === newPage) return;
+    // setAnimating(true);
+
+    setTimeout(() => {
+      setPage(newPage);
+      setAnimating(false);
+    }, 500); // match CSS duration
+  };
 
   return (
-    <PageContext.Provider value={{ page, setPage, selectedProject, setSelectedProject }}>
-    <div className="App">
-      <div className="layout">
-      {children}
+    <PageContext.Provider 
+      value={{ 
+        page, 
+        setPage: changePage,
+        selectedProject, 
+        setSelectedProject 
+      }}
+    >
+      <div className={`App ${animating ? "page-transition" : ""}`}>
+        <div className="layout">{children}</div>
       </div>
-    </div>
     </PageContext.Provider>
   );
-}
+};
 
 export const usePage = () => useContext(PageContext);
