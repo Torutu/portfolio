@@ -1,5 +1,5 @@
 // Portfolio-specific types
-export type { ProjectData, PageType, SocialLink } from './portfolio';
+export type { ProjectData, SocialLink } from './portfolio';
 
 // Component props types
 export type { 

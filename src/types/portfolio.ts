@@ -5,8 +5,6 @@ export interface ProjectData {
   badges: string;
 }
 
-export type PageType = 'aboutMe' | 'projects' | 'skills';
-
 export interface SocialLink {
   platform: string;
   url: string;
