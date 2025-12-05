@@ -26,9 +26,9 @@
   color: var(--header-primary-light-color);
 }
 
-.collapsibleContent {
-  /* padding: 1rem; */
-}
+/* .collapsibleContent {
+  padding: 1rem;
+} */
 
 /* right side */
 .rightSide,.leftSide{
@@ -177,12 +177,10 @@
   font-weight: 600;
 }
 
-
-
 /* footer */
-.footer{
-  /* border: 2px solid var(--primary-light-color); */
-}
+/* .footer{
+  border: 2px solid var(--primary-light-color);
+} */
 
 .footer__inner{
  /* background-color: var(--secondary-dark-color); */

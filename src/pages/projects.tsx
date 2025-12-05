@@ -2,6 +2,9 @@ import { JSX } from "react";
 import { usePage } from "../utils/pageContext";
 import { daggerforgeContent } from "./content/daggerforge";
 import { rulebookParserContent } from "./content/rulebookParser";
+import { dithernatorContent } from "./content/dithernator";
+import { pingpongContent } from "./content/pingpong";
+import { minishellContent } from "./content/minishell";
 import { PROJECTS_CONFIG, PORTFOLIO_CONFIG } from "../config/portfolioConfig";
 
 export function LeftProjectsText() {
@@ -32,24 +35,9 @@ export function LeftProjectsText() {
 export const projectContent: Record<string, JSX.Element> = {
   daggerforge: daggerforgeContent,
   rulebookparser: rulebookParserContent,
-  pingpong: (
-    <>
-      <h1>Ping Pong</h1>
-      <p>Project 3 description...</p>
-    </>
-  ),
-  dithernator: (
-    <>
-      <h1>Dithernator</h1>
-      <p>Project 4 description...</p>
-    </>
-  ),
-  minishell: (
-    <>
-      <h1>Minishell</h1>
-      <p>Project 5 description...</p>
-    </>
-  ),
+  pingpong: pingpongContent,
+  dithernator: dithernatorContent,
+  minishell: minishellContent,
   project6: (
     <>
       <h1>Project 6</h1>
