@@ -31,7 +31,7 @@
     radial-gradient(at 79% 34%, hsla(122,13%,41%,1) 0px, transparent 50%);
   
   background-size: 100% 100%;
-  animation: breatheScale 12s ease-in-out infinite;
+  animation: breatheScale 7s ease-in-out infinite;
   
   height: 100%;
   display: grid;
@@ -44,21 +44,15 @@
 }
 
 
-.page-transition {
+/* .page-transition {
   animation: pageSwitch 0.5s ease;
-}
+} */
 
-@keyframes pageSwitch {
-  0% { 
-    opacity: 1;
-  }
-  50% {
-    background-color: black;
-  }
-  100% {
-    opacity: 1;
-  }
-}
+/* @keyframes pageSwitch {
+  0% { opacity: 1; }
+  50% { background-color: black; }
+  100% { opacity: 1; }
+} */
 
 
 

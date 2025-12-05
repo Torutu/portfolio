@@ -1,4 +1,4 @@
-import { usePage } from "../utils/pageContext";
+import { usePage } from "../../utils/pageContext";
 import { projectContent } from "../projects";
 import { ReactNode } from "react";
 

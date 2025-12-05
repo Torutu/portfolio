@@ -1,9 +1,9 @@
-export{leftSkillsText, rightSkillsText}
+import { PORTFOLIO_CONFIG } from "../config/portfolioConfig";
 
-const leftSkillsText = <p className="leftSide__p">Lorem ipsum dolor sit amet consectetur adipiscing elit. 
-Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi
-pretium tellus duis convallis. 
-Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus 
-Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus </p>
+export const leftSkillsText = (
+  <p className="leftSide__p">
+    {PORTFOLIO_CONFIG.skillsLeft}
+  </p>
+);
 
-const rightSkillsText = "skills.tsx"
+export const rightSkillsText = "skills.tsx";

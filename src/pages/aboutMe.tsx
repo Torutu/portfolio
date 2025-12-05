@@ -1,11 +1,9 @@
-export{leftAboutMeText, rightAboutMeText}
+import { PORTFOLIO_CONFIG } from "../config/portfolioConfig";
 
-const leftAboutMeText = <p className="leftSide__p">Lorem ipsum dolor sit amet consectetur adipiscing elit. 
-Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi
-pretium tellus duis convallis. 
-Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus 
-fringilla lacus nec metus bibendum egestas. Iaculis massa nisl 
-malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. 
-Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+export const leftAboutMeText = (
+  <p className="leftSide__p">
+    {PORTFOLIO_CONFIG.aboutMeLeft}
+  </p>
+);
 
-const rightAboutMeText = `aboutMe.tsx`
+export const rightAboutMeText = `aboutMe.tsx`;

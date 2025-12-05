@@ -1,4 +1,34 @@
-@import '../../App.css';
+@import './app.css';
+
+.collapsibleSection {
+  border: 2px solid var(--hover-color);
+  background-color: var(--secondary-dark-color-fade);
+  border-radius: 8px;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 2%;
+  margin-bottom: 1rem;
+  margin-left: 5%;
+  margin-right: 5%;
+  overflow: hidden;
+}
+
+.collapsibleButton {
+  width: 100%;
+  text-align: left;
+  padding-left: 0%;
+  padding-top: 2%;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--header-primary-light-color);
+}
+
+.collapsibleContent {
+  /* padding: 1rem; */
+}
 
 /* right side */
 .rightSide,.leftSide{
@@ -17,6 +47,7 @@
  height:100%;
  margin-left: 5%;
  overflow-y: auto;
+ padding-bottom: 20%;
 }
 
 .rightSide__inner::-webkit-scrollbar {
@@ -36,10 +67,10 @@
 
 .rightSide__h{
   margin: 0px !important;
-  padding-top: 0%;
+  padding-top: 20%;
   text-align: center;
   font-family: var(--calm-font-family);
-  font-size: 4rem;
+  font-size: 2.1rem;
   font-weight: 600;
   color: var(--header-primary-light-color);
 }
@@ -47,20 +78,33 @@
 .rightSide__p,.rightSideSection__p{
   margin: 0px !important;
   font-family: var(--calm-font-family);
-  font-size: 1.2rem;
+  font-size: 0.9rem;
   font-weight: 400;
   text-align: left;
   color: var(--header-primary-light-color);
-  padding-left: 2%;
-  padding-right: 2%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.rightSideSection__p_end{
+  margin: 0px !important;
+  font-family: var(--calm-font-family);
+  font-size: 0.9rem;
+  font-weight: 400;
+  text-align: left;
+  color: var(--header-primary-light-color);
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 15%;
 }
 
 .rightSideSection__h1{
   margin: 0px !important;
   padding-top: 2%;
+  padding-left: 2%;
   text-align: center;
   font-family: var(--calm-font-family);
-  font-size: 2.5rem;
+  font-size: 1.8rem;
   font-weight: 600;
   color: var(--header-primary-light-color);
 }
@@ -70,18 +114,18 @@
   padding-top: 2%;
   text-align: center;
   font-family: var(--calm-font-family);
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   font-weight: 600;
   color: var(--header-primary-light-color);
 }
 
 .rightSideSection__h3{
   margin: 0px !important;
-  padding-top: 2%;
-  padding-left: 2%;
+  padding-top: 5%;
+  padding-left: 5%;
   text-align: left;
   font-family: var(--calm-font-family);
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   font-weight: 600;
   color: var(--header-primary-light-color);
 }
@@ -89,7 +133,7 @@
 .rightSideSection__pseudoCode{
   margin: 0px !important;
   font-family: var(--font-family);
-  font-size: 0.9rem;
+  font-size: 0.5rem;
   font-weight: 400;
   text-align: left;
   width: max-content;

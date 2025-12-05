@@ -1,19 +1,7 @@
 import { JSX } from "react";
-import { usePage } from "./utils/pageContext";
+import { usePage } from "../utils/pageContext";
 import { daggerforgeContent } from "./content/daggerforge";
-
-const projects = [
-  { id: "daggerforge", name: "Daggerforge", description: "A tool that helps dungeon masters build session content fast.", badges: "Badges" },
-  { id: "rulebookparser", name: "Rulebook parser", description: "Convert plain text rulebook to a structured json format", badges: "Badges" },
-  { id: "pingpong", name: "Ping Pong", description: "3D Ping Pong game", badges: "Badges" },
-  { id: "dithernator", name: "Dithernator", description: "Add a dithering effect to an image", badges: "Badges" },
-  { id: "minishell", name: "Minishell", description: "A simple shell", badges: "Badges" },
-  { id: "project6", name: "Project 6", description: "Description", badges: "Badges" },
-  { id: "project7", name: "Project 7", description: "Description", badges: "Badges" },
-  { id: "project8", name: "Project 8", description: "Description", badges: "Badges" },
-  { id: "project9", name: "Project 9", description: "Description", badges: "Badges" },
-  { id: "project10", name: "Project 10", description: "Description", badges: "Badges" },
-];
+import { PROJECTS_CONFIG, PORTFOLIO_CONFIG } from "../config/portfolioConfig";
 
 export function LeftProjectsText() {
   const { setSelectedProject } = usePage();
@@ -21,11 +9,10 @@ export function LeftProjectsText() {
   return (
     <>
       <p className="leftSide__p">
-        I use my skills to feed my hobbies and help my friends with their
-        projects, I enjoy pushing forward and learn along the way
+        {PORTFOLIO_CONFIG.projectsIntro}
       </p>
       <div className="leftSide__menu">
-        {projects.map((project) => (
+        {PROJECTS_CONFIG.map((project) => (
           <div
             key={project.id}
             className="leftSide__menu_item"
