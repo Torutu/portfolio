@@ -1,6 +1,7 @@
 import { JSX } from "react";
 import { usePage } from "../utils/pageContext";
 import { daggerforgeContent } from "./content/daggerforge";
+import { rulebookParserContent } from "./content/rulebookParser";
 import { PROJECTS_CONFIG, PORTFOLIO_CONFIG } from "../config/portfolioConfig";
 
 export function LeftProjectsText() {
@@ -30,12 +31,7 @@ export function LeftProjectsText() {
 
 export const projectContent: Record<string, JSX.Element> = {
   daggerforge: daggerforgeContent,
-  rulebookparser: (
-    <>
-      <h1>Rulebook parser</h1>
-      <p>Some info about project 2.</p>
-    </>
-  ),
+  rulebookparser: rulebookParserContent,
   pingpong: (
     <>
       <h1>Ping Pong</h1>

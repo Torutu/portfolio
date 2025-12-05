@@ -157,11 +157,6 @@
  max-height: 70%;
  margin-left: 10%;
  margin-top: 18%;
- /* display: grid;
- grid-template-columns: 1fr;
- grid-template-rows: 1fr 0.1fr;
- grid-column-gap: 0px;
- grid-row-gap: 0px; */
 }
 
 .leftSide__inner_upper{
