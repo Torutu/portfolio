@@ -1,6 +1,4 @@
 import { createContext, useContext, useState, ReactNode } from "react";
-import { PageType } from "../types/portfolio";
-
 interface PageContextType {
   page: string;
   setPage: (page: string) => void;
