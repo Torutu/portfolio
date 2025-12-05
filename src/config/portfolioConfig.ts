@@ -68,13 +68,9 @@ export const PORTFOLIO_CONFIG = {
   author: "Waleed",
   introText: "Hello! I'm Waleed, a passionate",
   introText2: " software developer.",
-  aboutMeLeft: `After several years working in sales and customer-facing roles, 
-  I moved to Finland to pursue software engineering at 42 Hive Helsinki. 
-  My background combines technical curiosity with hands-on experience solving 
-  problems, managing operations, and working directly with people. At Hive, 
-  I’ve been diving into C, C++, and systems-level programming through 
-  project-based learning, and I’m now focused on growing as a developer and 
-  building practical, reliable software.`,
+  aboutMeLeft: `I enjoy working across the full stack. 
+  I love building clean, interactive user interfaces and creating practical,
+  reliable software that feels good to use.`,
   skillsLeft: `Lorem ipsum dolor sit amet consectetur adipiscing elit. 
 Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi
 pretium tellus duis convallis. 

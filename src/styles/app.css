@@ -13,8 +13,52 @@
   --calm-font-family: 'Lexend', sans-serif;
 }
 
-
 .App {
+  position: relative;
+  height: 100%;
+  display: grid;
+  overflow: hidden;
+  background-color: hsla(240,90%,5%,1);
+}
+
+/* Foggy layer */
+.App::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  
+  /* Use semi-transparent radial gradients for soft fog effect */
+  background-image:
+radial-gradient(at 73% 60%, hsla(240,89%,5%,1) 0px, transparent 50%),
+radial-gradient(at 5% 93%, hsla(240,81%,10%,1) 0px, transparent 50%),
+radial-gradient(at 97% 64%, hsla(240,82%,10%,1) 0px, transparent 50%),
+radial-gradient(at 83% 93%, hsla(240,81%,10%,1) 0px, transparent 50%),
+radial-gradient(at 18% 15%, hsla(240,81%,10%,1) 0px, transparent 50%),
+radial-gradient(at 63% 26%, hsla(217,81%,23%,1) 0px, transparent 50%),
+radial-gradient(at 43% 36%, hsla(217,81%,23%,1) 0px, transparent 50%),
+radial-gradient(at 23% 26%, hsla(217,81%,23%,1) 0px, transparent 50%);
+  
+  background-size: cover;
+  animation: breatheScale 10s ease-in-out infinite;
+}
+
+/* Keep your content on top */
+.App > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* @keyframes breatheScale {
+  0% { background-size: 100% 100%; }
+  50% { background-size: 140% 140%; }
+  100% { background-size: 100% 100%; }
+} */
+
+
+
+/* .App {
   background-color: hsla(228,68%,10%,1);
   background-image:
     radial-gradient(at 47% 75%, hsla(228,68%,10%,1) 0px, transparent 50%),
@@ -41,7 +85,7 @@
   0%   { background-size: 100% 100%; }
   50%  { background-size: 140% 140%; }
   100% { background-size: 100% 100%; }
-}
+} */
 
 
 /* .page-transition {
