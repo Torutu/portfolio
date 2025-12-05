@@ -11,7 +11,7 @@ const lineBreak = (
 );
 
 export function LeftSide() {
-  const { page, setPage } = usePage();
+  const { page } = usePage();
 
   let pContent =
     page === "aboutMe"
