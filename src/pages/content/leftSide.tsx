@@ -33,17 +33,6 @@ export function LeftSide() {
           {lineBreak}
           {pContent}
         </div>
-        <div className="leftSide__inner_lower">
-          <button className="leftSide__btn" onClick={() => setPage("aboutMe")}>
-            About me
-          </button>
-          <button className="leftSide__btn" onClick={() => setPage("projects")}>
-            Projects
-          </button>
-          <button className="leftSide__btn" onClick={() => setPage("skills")}>
-            Skills
-          </button>
-        </div>
       </div>
     </div>
   );
