@@ -14,7 +14,7 @@ export function RightSide() {
       ? projectContent[selectedProject as keyof typeof projectContent]
       : "Select a project";
   } else if (page === "skills") {
-    pContent = "Skills content";
+    pContent = "Skills content RAAAA";
   }
 
   return (
