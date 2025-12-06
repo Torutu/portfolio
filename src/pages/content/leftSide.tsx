@@ -10,6 +10,16 @@ const lineBreak = (
   </svg>
 );
 
+const verticalText = `
+#include <unistd.h>
+
+void ft_putchar(char c)
+{
+    write(1, &c, 1);
+}
+`;
+
+
 export function LeftSide() {
   const { page } = usePage();
 
@@ -24,6 +34,7 @@ export function LeftSide() {
 
   return (
     <div className="leftSide">
+      <span className="leftSide__verticalText">{verticalText}</span>
       <div className="leftSide__inner">
         <div className="leftSide__inner_upper">
           <h1 className="leftSide__h">

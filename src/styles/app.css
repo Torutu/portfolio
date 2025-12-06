@@ -2,6 +2,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Lexend:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Lexend:wght@100..900&family=Pixelify+Sans:wght@400..700&display=swap');
 :root{
   --primary-dark-color: #070d29;
   --secondary-dark-color: #1b4973;
@@ -12,6 +14,8 @@
   --badge-color: #748eff;
   --font-family: 'IBM Plex Mono', monospace;
   --calm-font-family: 'Lexend', sans-serif;
+  --tiny-font-family: 'Doto', sans-serif;
+  --pixel-font-family: 'Pixelify Sans', sans-serif;
 }
 
 .App {

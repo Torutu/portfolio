@@ -16,7 +16,7 @@ export function Footer() {
             Skills
           </button>
         </div>
-        <h1 className="footer__h">Footer</h1>
+        <h1 className="footer__h">42 Helsinki</h1>
       </div>
     </div>
   );

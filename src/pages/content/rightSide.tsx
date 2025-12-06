@@ -2,6 +2,15 @@ import { usePage } from "../../utils/pageContext";
 import { projectContent } from "../projects";
 import { ReactNode } from "react";
 
+const verticalText = `
+#include <unistd.h>
+
+void ft_putchar(char c)
+{
+    write(1, &c, 1);
+}
+`;
+
 export function RightSide() {
   const { page, selectedProject } = usePage();
 
@@ -19,6 +28,7 @@ export function RightSide() {
 
   return (
     <div className="rightSide">
+      <span className="rightSide__verticalText">{verticalText}</span>
       <div className={`rightSide__inner 
         ${page === 'aboutMe' ? 'no-bg' : ''}
         ${page === 'projects' ? 'projects-anim' : ''}
