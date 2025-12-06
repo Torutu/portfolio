@@ -1,5 +1,4 @@
 import { PORTFOLIO_CONFIG } from "../config/portfolioConfig";
-
 export function LeftSkillsText() {
   return (
     <p className="leftSide__p">

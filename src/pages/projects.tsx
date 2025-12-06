@@ -6,6 +6,7 @@ import { dithernatorContent } from "./content/dithernator";
 import { pingpongContent } from "./content/pingpong";
 import { minishellContent } from "./content/minishell";
 import { PROJECTS_CONFIG, PORTFOLIO_CONFIG } from "../config/portfolioConfig";
+import React from "react";
 
 export function LeftProjectsText() {
   const { setSelectedProject } = usePage();
@@ -24,10 +25,10 @@ export function LeftProjectsText() {
             <div className="leftSide__menu_item_name">{project.name}</div>
             <div className="leftSide__menu_item_description">{project.description}</div>
             <div className="leftSide__menu_item_badges">
-              {project.badges.map((badge) => (
-                <span key={badge} className="badge">
-                  {badge}
-                </span>
+              {project.badges.map((badge, i) => (
+              <span key={i} className="badge">
+                {typeof badge === "string" ? badge : React.cloneElement(badge, { width: 24, height: 24 })}
+              </span>
               ))}
             </div>
           </div>

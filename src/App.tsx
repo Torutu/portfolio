@@ -1,16 +1,16 @@
 import React from 'react';
 import './styles/app.css';
 import './styles/content.css';
-import { LeftSide } from './pages/content/leftSide';
-import { RightSide } from './pages/content/rightSide';
+import { Header } from './pages/content/header';
+import { Main } from './pages/content/main';
 import { Footer } from './pages/content/footer';
 import { PageProvider } from './utils/pageContext';
 
 function App() {
   return (
     <PageProvider>
-      <LeftSide />
-      <RightSide />
+      <Header />
+      <Main />
       <Footer />
     </PageProvider>
   );

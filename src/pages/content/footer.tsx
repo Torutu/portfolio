@@ -3,9 +3,9 @@ import { usePage } from "../../utils/pageContext";
 export function Footer() {
   const { setPage } = usePage();
   return (
-    <div className="footer">
+    <footer className="footer">
       <div className="footer__inner">
-        <div className="leftSide__inner_lower">
+        <nav className="footer__nav">
           <button className="leftSide__btn" onClick={() => setPage("aboutMe")}>
             About me
           </button>
@@ -15,9 +15,9 @@ export function Footer() {
           <button className="leftSide__btn" onClick={() => setPage("skills")}>
             Skills
           </button>
-        </div>
+        </nav>
         <h1 className="footer__h">42 Helsinki</h1>
       </div>
-    </div>
+    </footer>
   );
 }
