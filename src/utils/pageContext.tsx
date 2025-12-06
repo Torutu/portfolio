@@ -13,7 +13,6 @@ const PageContext = createContext<PageContextType>({
   setSelectedProject: () => {},
 });
 
-// See: docs/functions/PageProvider.md
 export const PageProvider = ({ children }: { children: ReactNode }) => {
   const [page, setPage] = useState("aboutMe");
   const [selectedProject, setSelectedProject] = useState("");
@@ -29,7 +28,6 @@ export const PageProvider = ({ children }: { children: ReactNode }) => {
   );
 }
 
-// See: docs/functions/CollapsibleSection.md
 export function CollapsibleSection({ title, children }: { title: string; children: ReactNode }) {
   const [open, setOpen] = useState(false);
 

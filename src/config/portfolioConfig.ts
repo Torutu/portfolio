@@ -5,61 +5,61 @@ export const PROJECTS_CONFIG: ProjectData[] = [
     id: "daggerforge",
     name: "Daggerforge",
     description: "A tool that helps dungeon masters build session content fast.",
-    badges: "Badges"
+    badges: ["typescript", "json", "html", "css"]
   },
   {
     id: "rulebookparser",
     name: "Rulebook parser",
     description: "Convert plain text rulebook to a structured json format",
-    badges: "Badges"
+    badges: ["go", "json"]
   },
   {
     id: "pingpong",
     name: "Ping Pong",
     description: "3D Ping Pong game",
-    badges: "Badges"
+    badges: ["React", "typescript"]
   },
   {
     id: "dithernator",
     name: "Dithernator",
     description: "Add a dithering effect to an image",
-    badges: "Badges"
+    badges: ["Badges"]
   },
   {
     id: "minishell",
     name: "Minishell",
     description: "A simple shell",
-    badges: "Badges"
+    badges: ["Badges"]
   },
   {
     id: "project6",
     name: "Project 6",
     description: "Description",
-    badges: "Badges"
+    badges: ["Badges"]
   },
   {
     id: "project7",
     name: "Project 7",
     description: "Description",
-    badges: "Badges"
+    badges: ["Badges"]
   },
   {
     id: "project8",
     name: "Project 8",
     description: "Description",
-    badges: "Badges"
+    badges: ["Badges"]
   },
   {
     id: "project9",
     name: "Project 9",
     description: "Description",
-    badges: "Badges"
+    badges: ["Badges"]
   },
   {
     id: "project10",
     name: "Project 10",
     description: "Description",
-    badges: "Badges"
+    badges: ["Badges"]
   }
 ];
 

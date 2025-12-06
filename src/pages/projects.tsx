@@ -12,9 +12,8 @@ export function LeftProjectsText() {
 
   return (
     <>
-      <p className="leftSide__p">
-        {PORTFOLIO_CONFIG.projectsIntro}
-      </p>
+      <p className="leftSide__p">{PORTFOLIO_CONFIG.projectsIntro}</p>
+
       <div className="leftSide__menu">
         {PROJECTS_CONFIG.map((project) => (
           <div
@@ -24,13 +23,20 @@ export function LeftProjectsText() {
           >
             <div className="leftSide__menu_item_name">{project.name}</div>
             <div className="leftSide__menu_item_description">{project.description}</div>
-            <div className="leftSide__menu_item_badges">{project.badges}</div>
+            <div className="leftSide__menu_item_badges">
+              {project.badges.map((badge) => (
+                <span key={badge} className="badge">
+                  {badge}
+                </span>
+              ))}
+            </div>
           </div>
         ))}
       </div>
     </>
-  );  
+  );
 }
+
 
 export const projectContent: Record<string, JSX.Element> = {
   daggerforge: daggerforgeContent,

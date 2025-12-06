@@ -8,18 +8,22 @@ export function RightSide() {
   let pContent: ReactNode = "";
 
   if (page === "aboutMe") {
-    pContent = "About me content";
+    pContent = "";
   } else if (page === "projects") {
     pContent = selectedProject
       ? projectContent[selectedProject as keyof typeof projectContent]
-      : "Select a project";
+      : "";
   } else if (page === "skills") {
-    pContent = "Skills content RAAAA";
+    pContent = "";
   }
 
   return (
     <div className="rightSide">
-      <div className="rightSide__inner">{pContent}</div>
+      <div className={`rightSide__inner 
+        ${page === 'aboutMe' ? 'no-bg' : ''}
+        ${page === 'projects' ? 'projects-anim' : ''}
+        `
+        }>{pContent}</div>
     </div>
   );
 }

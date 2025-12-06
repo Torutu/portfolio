@@ -13,6 +13,20 @@ const whatIsPingPong = (
   </>
 );
 
+// const GameplayDemo = (
+//   <>
+//     <CollapsibleSection title="Try It Out">
+//       <p className="rightSideSection__p" style={{ marginTop: "20px" }}>
+//         <strong>Controls:</strong><br />
+//         <strong>Left Paddle:</strong> W (up) / S (down)<br />
+//         <strong>Right Paddle:</strong> Arrow Up / Arrow Down<br />
+//         <strong>Start:</strong> SPACE<br />
+//         <strong>Pause/Resume:</strong> ESC
+//       </p>
+//     </CollapsibleSection>
+//   </>
+// );
+
 const GameState = (
   <>
     <CollapsibleSection title="Game State Management">
@@ -146,7 +160,7 @@ const PauseAndResume = (
         Resumes with adjusted timer so elapsed pause time doesn't count against game duration.
       </p>
       <h3 className="rightSideSection__h3">How It Works</h3>
-      <p className="rightSideSection__p_end">
+      <p className="rightSideSection__p">
         Pause: Records current timestamp in whenPaused, clears interval, sets status to "paused". 
         Resume: Calculates pause duration (now - whenPaused), adds to gameEndTime so timer resumes 
         correctly. Restarts game loop. Only works in local mode (toggle controlled by one client). 
@@ -166,7 +180,7 @@ const DisconnectionHandling = (
         Notifies remaining players of disconnection.
       </p>
       <h3 className="rightSideSection__h3">How It Works</h3>
-      <p className="rightSideSection__p">
+      <p className="rightSideSection__p_end">
         On disconnect event, finds player by socket.id and removes from player array. 
         If players.length drops below 2, clears game loop and resets status to waiting. 
         For tournaments: checks canLeaveTournament() to prevent reconnection mid-match in remote mode. 
@@ -195,6 +209,7 @@ export const pingpongContent = (
   <>
     <h1 className="rightSide__h">Ping Pong Game</h1>
     {whatIsPingPong}
+    {/* {GameplayDemo} */}
     {featureBreakdown}
   </>
 );

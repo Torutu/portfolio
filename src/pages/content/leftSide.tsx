@@ -1,7 +1,7 @@
 import { usePage } from "../../utils/pageContext";
-import { leftAboutMeText } from "../aboutMe";
+import { LeftAboutMeText } from "../aboutMe";
 import { LeftProjectsText } from "../projects";
-import { leftSkillsText } from "../skills";
+import { LeftSkillsText } from "../skills";
 import { PORTFOLIO_CONFIG } from "../../config/portfolioConfig";
 
 const lineBreak = (
@@ -15,11 +15,11 @@ export function LeftSide() {
 
   let pContent =
     page === "aboutMe"
-      ? leftAboutMeText
+      ? <LeftAboutMeText />
       : page === "projects"
       ? <LeftProjectsText />
       : page === "skills"
-      ? leftSkillsText
+      ? <LeftSkillsText />
       : "";
 
   return (
@@ -27,8 +27,10 @@ export function LeftSide() {
       <div className="leftSide__inner">
         <div className="leftSide__inner_upper">
           <h1 className="leftSide__h">
+            <span className="typing">
             {PORTFOLIO_CONFIG.introText}
             <strong>{PORTFOLIO_CONFIG.introText2}</strong>
+            </span>
           </h1>
           {lineBreak}
           {pContent}

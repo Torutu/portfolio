@@ -2,7 +2,7 @@ export interface ProjectData {
   id: string;
   name: string;
   description: string;
-  badges: string;
+  badges: string[];
 }
 
 export interface SocialLink {
