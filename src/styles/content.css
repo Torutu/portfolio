@@ -185,6 +185,18 @@
   padding-right: 2%;
 }
 
+.topSide__horizontalText{
+  position: absolute;
+  top: 1%;
+  left: 10%;
+  writing-mode: horizontal-tb;
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-family: var(--tiny-font-family);
+  color: #a5a5a5;
+  user-select: none;
+}
+
 /* left side */
 .leftSide{
   /* border: 2px solid var(--primary-light-color); */

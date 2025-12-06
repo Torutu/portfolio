@@ -12,6 +12,7 @@
   --header-primary-light-color: #f0f0f0;
   --hover-color: #52cbbe67;
   --badge-color: #748eff;
+  --tiny-text-color: #a5a5a5;
   --font-family: 'IBM Plex Mono', monospace;
   --calm-font-family: 'Lexend', sans-serif;
   --tiny-font-family: 'Doto', sans-serif;
@@ -26,33 +27,44 @@
   background-color: hsla(240,90%,5%,1);
 }
 
-/* Foggy layer */
+/* Your gradients — unchanged except for movement */
 .App::before {
   content: '';
   position: absolute;
   inset: 0;
   pointer-events: none;
   z-index: 0;
-  
-  /* Use semi-transparent radial gradients for soft fog effect */
+
   background-image:
     radial-gradient(at 73% 60%, hsla(240,89%,5%,1) 0px, transparent 50%),
     radial-gradient(at 5% 93%, hsla(240,81%,10%,1) 0px, transparent 50%),
     radial-gradient(at 97% 64%, hsla(240,82%,10%,1) 0px, transparent 50%),
     radial-gradient(at 83% 93%, hsla(240,81%,10%,1) 0px, transparent 50%),
     radial-gradient(at 18% 15%, hsla(240,81%,10%,1) 0px, transparent 50%),
-    radial-gradient(at 63% 26%, hsla(217,81%,23%,1) 0px, transparent 50%),
-    radial-gradient(at 43% 36%, hsla(217,81%,23%,1) 0px, transparent 50%),
-    radial-gradient(at 23% 26%, hsla(217,81%,23%,1) 0px, transparent 50%);
-  
-  background-size: cover;
-  animation: breatheScale 10s ease-in-out infinite;
+    radial-gradient(at 63% 26%, hsla(217,81%,23%,1) 0px, transparent 80%),
+    radial-gradient(at 43% 36%, hsla(217,81%,23%,1) 0px, transparent 80%),
+    radial-gradient(at 23% 26%, hsla(217,81%,23%,1) 0px, transparent 100%);
+
+  animation: wanderBackground 30s linear infinite;
+  background-size: 120% 120%;
+  background-repeat: no-repeat;
+}
+
+/* Blur overlay */
+.App::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+
+  backdrop-filter: blur(28px); /* adjust strength here */
 }
 
 /* Keep your content on top */
 .App > * {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 
@@ -65,53 +77,37 @@
   height: 100%;
 }
 
-/* @keyframes breatheScale {
-  0% { background-size: 100% 100%; }
-  50% { background-size: 140% 140%; }
-  100% { background-size: 100% 100%; }
-} */
+@keyframes wanderBackground {
+  0% {
+    background-position:
+      0% 0%, 100% 0%, 0% 100%, 100% 100%,
+      50% 50%, 20% 80%, 80% 20%, 40% 40%;
+  }
 
+  25% {
+    background-position:
+      60% 10%, 15% 65%, 80% 90%, 5% 20%,
+      30% 60%, 85% 35%, 40% 5%, 60% 45%;
+  }
 
+  50% {
+    background-position:
+      80% 50%, 40% 5%, 10% 80%, 90% 30%,
+      55% 75%, 15% 45%, 70% 15%, 25% 55%;
+  }
 
-/* .App {
-  background-color: hsla(228,68%,10%,1);
-  background-image:
-    radial-gradient(at 47% 75%, hsla(228,68%,10%,1) 0px, transparent 50%),
-    radial-gradient(at 14% 76%, hsla(228,68%,10%,1) 0px, transparent 50%),
-    radial-gradient(at 15% 20%, hsla(228,68%,10%,1) 0px, transparent 50%),
-    radial-gradient(at 48% 20%, hsla(228,68%,10%,1) 0px, transparent 50%),
-    radial-gradient(at 2% 3%, hsla(207,60%,30%,0.58) 0px, transparent 50%),
-    radial-gradient(at 2% 96%, hsla(207,60%,30%,0.44) 0px, transparent 50%),
-    radial-gradient(at 86% 48%, hsla(208,61%,30%,1) 0px, transparent 50%),
-    radial-gradient(at 82% 49%, hsla(188,39%,36%,1) 0px, transparent 50%),
-    radial-gradient(at 4% 2%, hsla(207,63%,51%,0.77) 0px, transparent 80%),
-    radial-gradient(at 85% 54%, hsla(197,18%,21%,1) 0px, transparent 50%),
-    radial-gradient(at 86% 68%, hsla(122,12%,41%,1) 0px, transparent 50%),
-    radial-gradient(at 79% 34%, hsla(122,13%,41%,1) 0px, transparent 50%);
-  
-  background-size: 100% 100%;
-  animation: breatheScale 7s ease-in-out infinite;
-  
-  height: 100%;
-  display: grid;
+  75% {
+    background-position:
+      30% 90%, 70% 20%, 90% 70%, 15% 40%,
+      45% 25%, 60% 55%, 20% 30%, 75% 65%;
+  }
+
+  100% {
+    background-position:
+      0% 0%, 100% 0%, 0% 100%, 100% 100%,
+      50% 50%, 20% 80%, 80% 20%, 40% 40%;
+  }
 }
-
-@keyframes breatheScale {
-  0%   { background-size: 100% 100%; }
-  50%  { background-size: 140% 140%; }
-  100% { background-size: 100% 100%; }
-} */
-
-
-/* .page-transition {
-  animation: pageSwitch 0.5s ease;
-} */
-
-/* @keyframes pageSwitch {
-  0% { opacity: 1; }
-  50% { background-color: black; }
-  100% { opacity: 1; }
-} */
 
 
 

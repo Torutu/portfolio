@@ -5,8 +5,8 @@ import { LeftSkillsText } from "../skills";
 import { PORTFOLIO_CONFIG } from "../../config/portfolioConfig";
 
 const lineBreak = (
-  <svg width="100%" height="4">
-    <rect width="100%" height="4" fill="#52cbbe67" />
+  <svg width="100%" height="2">
+    <rect width="100%" height="2" fill="var(--hover-color)"/>
   </svg>
 );
 
@@ -19,6 +19,7 @@ void ft_putchar(char c)
 }
 `;
 
+const horizontalText = `42 Hive Helsinki`;
 
 export function LeftSide() {
   const { page } = usePage();
@@ -35,6 +36,7 @@ export function LeftSide() {
   return (
     <div className="leftSide">
       <span className="leftSide__verticalText">{verticalText}</span>
+      <span className="topSide__horizontalText">{horizontalText}</span>
       <div className="leftSide__inner">
         <div className="leftSide__inner_upper">
           <h1 className="leftSide__h">
