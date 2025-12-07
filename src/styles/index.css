@@ -85,7 +85,7 @@ box-sizing: border-box;
     background-color: var(--primary-dark-color);
     border-top: 2px solid var(--hover-color);
     padding: 0;
-    padding-bottom: max(env(safe-area-inset-bottom, 0px), 10px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
     width: 100%;
     box-sizing: border-box;
     position: sticky;
