@@ -573,7 +573,7 @@
     margin-left: 0;
     padding: 4%;
     min-height: 100%;
-    padding-bottom: 20%;
+    padding-bottom: calc(20% + env(safe-area-inset-bottom, 20px));
     box-sizing: border-box;
     overflow-x: hidden;
     word-wrap: break-word;
@@ -797,12 +797,14 @@
     border: none;
     border-right: 1px solid var(--hover-color);
     padding: 1rem 0.5rem;
+    padding-bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
     font-size: 0.95rem;
     background-color: var(--primary-dark-color);
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
+    min-height: 60px;
     transition: all 0.2s ease;
   }
 
