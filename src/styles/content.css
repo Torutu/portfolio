@@ -319,11 +319,6 @@
   colorChange 0.3s ease forwards;
 }
 
-@keyframes colorChange {
-  from { fill: rgba(245, 245, 245, 0.808); }
-  to   { fill: var(--primary-light-color); }
-}
-
 .leftSide__p{
   margin: 0px !important;
   font-family: var(--font-family);
