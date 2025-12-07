@@ -636,9 +636,14 @@
     gap: 3%;
     padding: 0 3%;
     margin-top: 0;
+    margin-bottom: 5%;
     background-color: transparent;
     width: 100%;
     box-sizing: border-box;
+    overflow: visible !important;
+    overflow-y: visible !important;
+    max-height: none !important;
+    height: auto !important;
   }
 
   .leftSide__menu_item {
