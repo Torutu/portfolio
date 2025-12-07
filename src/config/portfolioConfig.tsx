@@ -24,13 +24,13 @@ export const PROJECTS_CONFIG: ProjectData[] = [
     id: "dithernator",
     name: "Dithernator",
     description: "Add a dithering effect to an image",
-    badges: ["Badges"]
+    badges: ["c++"]
   },
   {
     id: "minishell",
     name: "Minishell",
     description: "A simple shell",
-    badges: ["Badges"]
+    badges: ["c", "bash"]
   }
 ];
 

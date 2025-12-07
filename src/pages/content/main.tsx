@@ -11,7 +11,7 @@ void ft_putchar(char c)
 }
 `;
 
-const horizontalText = `42 Hive Helsinki`;
+const horizontalText = `© Waleed Alnaimi`;
 
 export function Main() {
   const { page, selectedProject } = usePage();

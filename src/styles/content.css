@@ -46,9 +46,9 @@
   bottom: 1%;
   right: 1%;
   writing-mode: vertical-rl;
-  font-size: 0.8rem;
-  font-weight: 600;
-  font-family: var(--tiny-font-family);
+  font-size: 0.7rem;
+  font-weight: 400;
+  font-family: var(--font-family);
   color: #a5a5a5;
   user-select: none;
 }
@@ -192,11 +192,11 @@
 .topSide__horizontalText{
   position: absolute;
   top: 1%;
-  left: 10%;
+  left: 5%;
   writing-mode: horizontal-tb;
   font-size: 0.8rem;
-  font-weight: 600;
-  font-family: var(--tiny-font-family);
+  font-weight: 400;
+  font-family: var(--font-family);
   color: #a5a5a5;
   user-select: none;
 }
@@ -208,9 +208,9 @@
   left: 1%;
   writing-mode: vertical-rl;
   transform: rotate(180deg);
-  font-size: 0.8rem;
-  font-weight: 600;
-  font-family: var(--tiny-font-family);
+  font-size: 0.7rem;
+  font-weight: 400;
+  font-family: var(--font-family);
   color: #a5a5a5;
   user-select: none;
 }
@@ -292,8 +292,9 @@
 .footer__h{
   color: var(--primary-light-color);
   margin: 0px !important;
-  font-family: var(--tiny-font-family);
+  font-family: var(--font-family);
   font-size: 0.8rem;
+  font-weight: 400;
   padding-left: 3%;
 }
 
@@ -305,6 +306,22 @@
   padding-bottom: 2%;
   padding-left: 3%;
   grid-area: 2 / 1 / 3 / 2;
+}
+
+.footer__a{
+  margin-right: 2%;
+  fill: rgba(245, 245, 245, 0.808);
+}
+
+.footer__a:hover{
+  fill: var(--primary-light-color);
+  animation: 
+  colorChange 0.3s ease forwards;
+}
+
+@keyframes colorChange {
+  from { fill: rgba(245, 245, 245, 0.808); }
+  to   { fill: var(--primary-light-color); }
 }
 
 .leftSide__p{
