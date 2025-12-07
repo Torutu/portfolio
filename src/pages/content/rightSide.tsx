@@ -11,6 +11,8 @@ void ft_putchar(char c)
 }
 `;
 
+/* square on top right corner */
+
 export function RightSide() {
   const { page, selectedProject } = usePage();
 
@@ -32,8 +34,10 @@ export function RightSide() {
       <div className={`rightSide__inner 
         ${page === 'aboutMe' ? 'no-bg' : ''}
         ${page === 'projects' ? 'projects-anim' : ''}
+        ${page === 'skills' ? 'skills-anim' : ''}
         `
-        }>{pContent}</div>
+        }>
+          {pContent}</div>
     </div>
   );
 }

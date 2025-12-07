@@ -42,6 +42,7 @@ export function Main() {
       <div className={`rightSide__inner 
         ${page === 'aboutMe' ? 'no-bg' : ''}
         ${page === 'projects' ? 'projects-anim' : ''}
+        ${page === 'skills' ? 'skills-anim' : ''}
         `
         }>{pageContent}</div>
     </main>
