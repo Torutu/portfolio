@@ -31,36 +31,6 @@ export const PROJECTS_CONFIG: ProjectData[] = [
     name: "Minishell",
     description: "A simple shell",
     badges: ["Badges"]
-  },
-  {
-    id: "project6",
-    name: "Project 6",
-    description: "Description",
-    badges: ["Badges"]
-  },
-  {
-    id: "project7",
-    name: "Project 7",
-    description: "Description",
-    badges: ["Badges"]
-  },
-  {
-    id: "project8",
-    name: "Project 8",
-    description: "Description",
-    badges: ["Badges"]
-  },
-  {
-    id: "project9",
-    name: "Project 9",
-    description: "Description",
-    badges: ["Badges"]
-  },
-  {
-    id: "project10",
-    name: "Project 10",
-    description: "Description",
-    badges: ["Badges"]
   }
 ];
 

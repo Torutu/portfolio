@@ -10,17 +10,6 @@ const lineBreak = (
   </svg>
 );
 
-const verticalText = `
-#include <unistd.h>
-
-void ft_putchar(char c)
-{
-    write(1, &c, 1);
-}
-`;
-
-const horizontalText = `42 Hive Helsinki`;
-
 export function Header() {
   const { page } = usePage();
 
@@ -35,10 +24,7 @@ export function Header() {
 
   return (
     <header className="leftSide">
-      <span className="leftSide__verticalText">{verticalText}</span>
-      <span className="topSide__horizontalText">{horizontalText}</span>
       <div className="leftSide__inner">
-        <div className="leftSide__inner_upper">
           <h1 className="leftSide__h">
             <span className="typing">
             {PORTFOLIO_CONFIG.introText}
@@ -49,7 +35,6 @@ export function Header() {
           <nav className="leftSide__nav">
             {navContent}
           </nav>
-        </div>
       </div>
     </header>
   );

@@ -11,6 +11,8 @@ void ft_putchar(char c)
 }
 `;
 
+const horizontalText = `42 Hive Helsinki`;
+
 export function Main() {
   const { page, selectedProject } = usePage();
 
@@ -38,6 +40,8 @@ export function Main() {
 
   return (
     <main className="rightSide">
+      <span className="leftSide__verticalText">{verticalText}</span>
+      <span className="topSide__horizontalText">{horizontalText}</span>
       <span className="rightSide__verticalText">{verticalText}</span>
       <div className={`rightSide__inner 
         ${page === 'aboutMe' ? 'no-bg' : ''}
