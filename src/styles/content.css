@@ -388,7 +388,6 @@
   border-radius: 5px;
   margin-left: 2%;
   margin-right: 2%;
-  margin-bottom: 2%;
   height: 100px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
