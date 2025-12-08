@@ -493,6 +493,7 @@
   color: var(--header-primary-light-color);
   border-radius: 5px;
   border: 2px solid var(--secondary-dark-color);
+  transition: all 0.3s ease;
 }
 
 .leftSide__btn:hover {
@@ -502,6 +503,78 @@
 .leftSide__btn:active {
   background-color: var(--hover-color);
   transform: scale(0.95);
+}
+
+/* Active state styling */
+.leftSide__btn--active {
+  background-color: var(--hover-color);
+  border-color: var(--primary-light-color);
+}
+
+/* Icon styling inside buttons */
+.btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+.btn-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: var(--header-primary-light-color);
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 2rem;
+  padding: 2rem 1rem;
+  width: 100%;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.skill-item:hover {
+  transform: translateY(-4px);
+}
+
+.skill-item__icon {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-item__icon svg {
+  width: 100%;
+  height: 100%;
+  fill: var(--primary-light-color);
+  transition: fill 0.3s ease;
+}
+
+.skill-item:hover .skill-item__icon svg {
+  fill: var(--header-primary-light-color);
+}
+
+.skill-item__name {
+  margin: 0;
+  font-family: var(--calm-font-family);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--header-primary-light-color);
+  text-align: center;
 }
 
 /* Desktop: Hide mobile nav, show desktop content */
@@ -829,6 +902,18 @@
     transform: scale(0.98);
   }
 
+  /* Active state for mobile */
+  .leftSide__btn--active {
+    background-color: var(--secondary-dark-color);
+    border-bottom: 3px solid var(--primary-light-color);
+  }
+
+  /* Icon in mobile buttons */
+  .btn-icon {
+    width: 28px;
+    height: 28px;
+  }
+
   /* Hide all decorative text elements */
   .leftSide__verticalText,
   .rightSide__verticalText,
@@ -843,5 +928,26 @@
 
   .leftSide__menu::-webkit-scrollbar {
     width: 4px;
+  }
+
+  /* Skills Grid on Mobile */
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding: 1rem 0.5rem;
+  }
+
+  .skill-item {
+    gap: 0.5rem;
+    padding: 0.8rem 0.4rem;
+  }
+
+  .skill-item__icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .skill-item__name {
+    font-size: 0.75rem;
   }
 }

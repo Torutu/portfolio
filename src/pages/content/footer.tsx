@@ -2,19 +2,49 @@ import { usePage } from "../../utils/pageContext";
 import { icons } from "../../components/icons";
 
 export function Footer() {
-  const { setPage } = usePage();
+  const { page, setPage } = usePage();
+  
   return (
     <footer className="footer">
       <div className="footer__inner">
         <nav className="footer__nav">
-          <button className="leftSide__btn" onClick={() => setPage("aboutMe")}>
-            About me
+          <button 
+            className={`leftSide__btn ${page === "aboutMe" ? "leftSide__btn--active" : ""}`}
+            onClick={() => setPage("aboutMe")}
+          >
+            {page === "aboutMe" ? (
+              <span className="btn-icon">
+                <icons.AboutmeLogo />
+              </span>
+            ) : (
+              "About me"
+            )}
           </button>
-          <button className="leftSide__btn" onClick={() => setPage("projects")}>
-            Projects
+          
+          <button 
+            className={`leftSide__btn ${page === "projects" ? "leftSide__btn--active" : ""}`}
+            onClick={() => setPage("projects")}
+          >
+            {page === "projects" ? (
+              <span className="btn-icon">
+                <icons.ProjectsLogo />
+              </span>
+            ) : (
+              "Projects"
+            )}
           </button>
-          <button className="leftSide__btn" onClick={() => setPage("skills")}>
-            Skills
+          
+          <button 
+            className={`leftSide__btn ${page === "skills" ? "leftSide__btn--active" : ""}`}
+            onClick={() => setPage("skills")}
+          >
+            {page === "skills" ? (
+              <span className="btn-icon">
+                <icons.SkillsLogo />
+              </span>
+            ) : (
+              "Skills"
+            )}
           </button>
         </nav>
         <h1 className="footer__h">
