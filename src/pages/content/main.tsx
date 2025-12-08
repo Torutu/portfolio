@@ -3,7 +3,7 @@ import { projectContent } from "../projects";
 import { LeftAboutMeText } from "../aboutMe";
 import { LeftProjectsText } from "../projects";
 import { LeftSkillsText } from "../skills";
-import { ReactNode, useRef, useEffect, useState } from "react";
+import { ReactNode, useRef, useEffect } from "react";
 
 const verticalText = `
 #include <unistd.h>
