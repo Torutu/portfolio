@@ -9,6 +9,10 @@ body {
   width: 100%;
 }
 
+.cursor {
+  fill: var(--primary-color);
+}
+
 html, body, #root {
   height: 100%;
   max-width: 100%;

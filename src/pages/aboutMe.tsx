@@ -10,4 +10,4 @@ export function LeftAboutMeText() {
   );
 }
 
-export const rightAboutMeText = `aboutMe.tsx`;
+export const rightAboutMeText = `hello`;

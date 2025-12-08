@@ -90,6 +90,12 @@ export function Main() {
         <div className="desktop-content">
           {pageContent}
         </div>
+        {/* about me svg art rightside */}
+        {page === "aboutMe" && (
+          <div className="aboutMe-svg">
+            
+          </div>
+        )}
       </div>
     </main>
   );
