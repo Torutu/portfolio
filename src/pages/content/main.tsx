@@ -22,23 +22,6 @@ export function Main() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Only animate when transitioning FROM aboutMe TO another page
-    if (previousPageRef.current === "aboutMe" && page !== "aboutMe") {
-      // Force reflow to restart animation
-      if (containerRef.current) {
-        containerRef.current.classList.remove('animate-fadein');
-        void containerRef.current.offsetWidth; // Force reflow
-        containerRef.current.classList.add('animate-fadein');
-        
-        // Remove class after animation completes
-        const timer = setTimeout(() => {
-          if (containerRef.current) {
-            containerRef.current.classList.remove('animate-fadein');
-          }
-        }, 600);
-        return () => clearTimeout(timer);
-      }
-    }
     previousPageRef.current = page;
   }, [page]);
 
@@ -84,6 +67,8 @@ export function Main() {
         ref={containerRef}
         className={`rightSide__inner
           ${page === 'aboutMe' ? 'no-bg' : ''}
+          ${page === 'projects' ? 'animate-fadein' : ''}
+          ${page === 'skills' ? 'animate-fadein' : ''}
           ${selectedProject ? 'viewing-project' : ''}
         `}
       >
