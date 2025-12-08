@@ -17,8 +17,17 @@ export const PageProvider = ({ children }: { children: ReactNode }) => {
   const [page, setPage] = useState("aboutMe");
   const [selectedProject, setSelectedProject] = useState("");
 
+  // Custom setPage that clears selectedProject when leaving projects page
+  const handleSetPage = (newPage: string) => {
+    setPage(newPage);
+    // Clear selected project when navigating away from projects page
+    if (newPage !== "projects") {
+      setSelectedProject("");
+    }
+  };
+
   return (
-    <PageContext.Provider value={{ page, setPage, selectedProject, setSelectedProject }}>
+    <PageContext.Provider value={{ page, setPage: handleSetPage, selectedProject, setSelectedProject }}>
       <div className="App">
         <div className="layout">
           {children}
