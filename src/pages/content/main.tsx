@@ -3,7 +3,7 @@ import { projectContent } from "../projects";
 import { LeftAboutMeText } from "../aboutMe";
 import { LeftProjectsText } from "../projects";
 import { LeftSkillsText } from "../skills";
-import { ReactNode } from "react";
+import { ReactNode, useRef, useEffect } from "react";
 
 const verticalText = `
 #include <unistd.h>
@@ -18,6 +18,29 @@ const horizontalText = `42 Hive Helsinki`;
 
 export function Main() {
   const { page, selectedProject, setSelectedProject } = usePage();
+  const previousPageRef = useRef(page);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // Only animate when transitioning FROM aboutMe TO another page
+    if (previousPageRef.current === "aboutMe" && page !== "aboutMe") {
+      // Force reflow to restart animation
+      if (containerRef.current) {
+        containerRef.current.classList.remove('animate-fadein');
+        void containerRef.current.offsetWidth; // Force reflow
+        containerRef.current.classList.add('animate-fadein');
+        
+        // Remove class after animation completes
+        const timer = setTimeout(() => {
+          if (containerRef.current) {
+            containerRef.current.classList.remove('animate-fadein');
+          }
+        }, 600);
+        return () => clearTimeout(timer);
+      }
+    }
+    previousPageRef.current = page;
+  }, [page]);
 
   let pageContent: ReactNode = "";
   let mobileNavContent: ReactNode = "";
@@ -57,13 +80,13 @@ export function Main() {
       <span className="leftSide__verticalText">{verticalText}</span>
       <span className="topSide__horizontalText">{horizontalText}</span>
       <span className="rightSide__verticalText">{verticalText}</span>
-      <div key={page} className={`rightSide__inner 
-        ${page === 'aboutMe' ? 'no-bg' : ''}
-        ${page === 'projects' ? 'projects-anim' : ''}
-        ${page === 'skills' ? 'skills-anim' : ''}
-        ${selectedProject ? 'viewing-project' : ''}
-        `
-        }>
+      <div 
+        ref={containerRef}
+        className={`rightSide__inner
+          ${page === 'aboutMe' ? 'no-bg' : ''}
+          ${selectedProject ? 'viewing-project' : ''}
+        `}
+      >
         {/* Back to Projects button - only visible on mobile when on projects page AND viewing a project */}
         {page === "projects" && selectedProject && (
           <button 
