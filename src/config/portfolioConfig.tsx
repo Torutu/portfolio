@@ -1,5 +1,27 @@
 import { ProjectData } from '../types/portfolio';
-// import { icons } from '../components/icons';
+import { icons } from '../components/icons';
+
+// Badge data structure matching Skills
+interface Badge {
+  name: string;
+  icon: keyof typeof icons;
+}
+
+// Map badge names to icon components
+const BADGE_MAP: Record<string, Badge> = {
+  typescript: { name: "TypeScript", icon: "TypeScriptLogo" },
+  json: { name: "JSON", icon: "JsonLogo" },
+  html: { name: "HTML", icon: "HtmlLogo" },
+  css: { name: "CSS", icon: "CssLogo" },
+  go: { name: "Go", icon: "GoLogo" },
+  react: { name: "React", icon: "ReactLogo" },
+  prisma: { name: "Prisma", icon: "PrismaLogo" },
+  tailwindcss: { name: "Tailwind", icon: "TailwindcssLogo" },
+  threejs: { name: "Three.js", icon: "ThreejsLogo" },
+  "c++": { name: "C++", icon: "CppLogo" },
+  c: { name: "C", icon: "CLogo" },
+  bash: { name: "Linux", icon: "LinuxLogo" }
+};
 
 export const PROJECTS_CONFIG: ProjectData[] = [
   {
@@ -18,7 +40,7 @@ export const PROJECTS_CONFIG: ProjectData[] = [
     id: "pingpong",
     name: "Ping Pong",
     description: "3D Ping Pong game",
-    badges: ["React", "typescript", "prisma", "tailwindcss", "threejs"]
+    badges: ["react", "typescript", "prisma", "tailwindcss", "threejs"]
   },
   {
     id: "dithernator",
@@ -50,3 +72,5 @@ Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus `,
   projectsIntro: `I use my skills to feed my hobbies and help my friends with their
         projects, I enjoy pushing forward and learn along the way`
 };
+
+export { BADGE_MAP };

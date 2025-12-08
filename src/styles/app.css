@@ -3,7 +3,7 @@
 @import 'animation.css';
 @import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Outfit:wght@100..900&display=swap');
 
-:root{
+:root[data-theme="dark-blue"] {
   --primary-dark-color: #070d29;
   --secondary-dark-color: #1b4973;
   --secondary-dark-color-fade: #1b487367; /* <- SIX SEVEEEN */
@@ -12,10 +12,48 @@
   --hover-color: #52cbbe67;
   --badge-color: #748eff;
   --tiny-text-color: #a5a5a5;
+  --background-dark-gradient: hsla(240,85%,5%,1);
+  --background-light-gradient: hsla(217,81%,23%,1);
   --font-family: 'IBM Plex Mono', monospace;
   --calm-font-family: 'Lexend', sans-serif;
   --tiny-font-family: 'Outfit', sans-serif;
   --pixel-font-family: 'Doto', sans-serif;
+}
+
+:root[data-theme="dark-green"] {
+  --primary-dark-color: #0a1f1a;
+  --secondary-dark-color: #0f3d33;
+  --secondary-dark-color-fade: #0f3d3370;
+  --primary-light-color: #3af180;
+  --header-primary-light-color: #f0f0f0;
+  --hover-color: #3ce07b70;
+  --badge-color: #2fd68a;
+  --background-dark-gradient: #0a1f1a;
+  --background-light-gradient: #0f3d33;
+    --font-family: 'IBM Plex Mono', monospace;
+  --calm-font-family: 'Lexend', sans-serif;
+  --tiny-font-family: 'Outfit', sans-serif;
+  --pixel-font-family: 'Doto', sans-serif;
+}
+
+:root[data-theme="dark-red"] {
+  --primary-dark-color: #2a0a0a;
+  --secondary-dark-color: #4d1f1f;
+  --secondary-dark-color-fade: #4d1f1f70;
+  --primary-light-color: #fa3030;
+  --header-primary-light-color: #f0f0f0;
+  --hover-color: #ff4d4d70;
+  --badge-color: #ff6666;
+  --background-dark-gradient: #2a0a0a;
+  --background-light-gradient: #4d1f1f;
+    --font-family: 'IBM Plex Mono', monospace;
+  --calm-font-family: 'Lexend', sans-serif;
+  --tiny-font-family: 'Outfit', sans-serif;
+  --pixel-font-family: 'Doto', sans-serif;
+}
+
+:root {
+  transition: all 0.8s ease;
 }
 
 .App {
@@ -23,7 +61,7 @@
   height: 100%;
   display: grid;
   overflow: hidden;
-  background-color: hsla(240,90%,5%,1);
+  background-color: var(--background-dark-gradient);
 }
 
 /* Your gradients — unchanged except for movement */
@@ -35,14 +73,14 @@
   z-index: 0;
 
   background-image:
-    radial-gradient(at 73% 60%, hsla(240,89%,5%,1) 0px, transparent 50%),
-    radial-gradient(at 5% 93%, hsla(240,81%,10%,1) 0px, transparent 50%),
-    radial-gradient(at 97% 64%, hsla(240,82%,10%,1) 0px, transparent 50%),
-    radial-gradient(at 83% 93%, hsla(240,81%,10%,1) 0px, transparent 50%),
-    radial-gradient(at 18% 15%, hsla(240,81%,10%,1) 0px, transparent 50%),
-    radial-gradient(at 63% 26%, hsla(217,81%,23%,1) 0px, transparent 80%),
-    radial-gradient(at 43% 36%, hsla(217,81%,23%,1) 0px, transparent 80%),
-    radial-gradient(at 23% 26%, hsla(217,81%,23%,1) 0px, transparent 100%);
+    radial-gradient(at 73% 60%, var(--background-dark-gradient) 0px, transparent 50%),
+    radial-gradient(at 5% 93%, var(--background-dark-gradient) 0px, transparent 50%),
+    radial-gradient(at 97% 64%, var(--background-dark-gradient) 0px, transparent 50%),
+    radial-gradient(at 83% 93%, var(--background-dark-gradient) 0px, transparent 50%),
+    radial-gradient(at 18% 15%, var(--background-dark-gradient) 0px, transparent 50%),
+    radial-gradient(at 63% 26%, var(--background-light-gradient) 0px, transparent 80%),
+    radial-gradient(at 43% 36%, var(--background-light-gradient) 0px, transparent 80%),
+    radial-gradient(at 23% 26%, var(--background-light-gradient) 0px, transparent 100%);
 
   animation: wanderBackground 15s linear infinite;
   background-size: 120% 120%;

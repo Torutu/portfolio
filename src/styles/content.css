@@ -65,6 +65,15 @@
  opacity: 1;
 }
 
+.colorChanger{
+ border: 1px solid var(--primary-light-color);
+ width: 40%;
+ height: 40%;
+ margin-left: 30%;
+ margin-top: 30%;
+}
+
+
 /* Conditional fade-in animation */
 .rightSide__inner.animate-fadein {
   animation: fadeIn 0.6s ease forwards;
@@ -446,28 +455,49 @@
   grid-area: 2 / 2 / 3 / 3;
   height: 100%;
   align-items: center;
-  gap: 2%;
+  gap: 1rem;
 }
 
-.leftSide__menu_item_badges .badge{
-  border: 2px solid var(--secondary-dark-color);
-  background-color: var(--primary-dark-color);
-  border-radius: 5px;
-  padding: 0.1rem 0.2rem;
+/* Badge Item - styled like skill items */
+.badge-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  transition: transform 0.2s ease;
+}
+
+.badge-item:hover {
+  transform: translateY(-2px);
+}
+
+.badge-item__icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badge-item__icon svg {
+  width: 100%;
+  height: 100%;
+  transition: fill 0.3s ease;
+}
+
+.badge-item:hover .badge-item__icon svg {
+  filter: brightness(1.2);
+}
+
+.badge-item__name {
+  margin: 0;
   font-family: var(--calm-font-family);
-  font-weight: 400;
-  font-size: 0.9rem;
-  color: var(--badge-color);
-}
-
-.leftSide__menu_item_badges .badge svg {
-  width: 1.2rem;
-  height: 1.2rem;
-  fill: var(--badge-color);
-  border: unset;
-  background-color: unset;
-  display: inline-block;
-  vertical-align: middle;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--header-primary-light-color);
+  text-align: center;
+  white-space: nowrap;
 }
 
 
@@ -758,7 +788,7 @@
   .leftSide__menu_item_badges {
     display: flex;
     flex-wrap: wrap;
-    gap: 2%;
+    gap: 0.6rem;
     padding: 0;
     grid-area: unset;
     height: auto;
@@ -768,10 +798,18 @@
     margin-top: auto;
   }
 
-  .leftSide__menu_item_badges .badge {
+  /* Mobile badge styling */
+  .badge-item {
+    gap: 0.3rem;
+  }
+
+  .badge-item__icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .badge-item__name {
     font-size: 0.7rem;
-    padding: 0.15rem 0.4rem;
-    white-space: nowrap;
   }
 
   /* Project Detail View */

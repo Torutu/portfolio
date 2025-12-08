@@ -3,7 +3,7 @@ import { projectContent } from "../projects";
 import { LeftAboutMeText } from "../aboutMe";
 import { LeftProjectsText } from "../projects";
 import { LeftSkillsText } from "../skills";
-import { ReactNode, useRef, useEffect } from "react";
+import { ReactNode, useRef, useEffect, useState } from "react";
 
 const verticalText = `
 #include <unistd.h>
@@ -15,6 +15,12 @@ void ft_putchar(char c)
 `;
 
 const horizontalText = `42 Hive Helsinki`;
+
+const setTheme = (theme: "dark-blue" | "dark-green" | "dark-red") => {
+  document.documentElement.setAttribute("data-theme", theme);
+};
+
+
 
 export function Main() {
   const { page, selectedProject, setSelectedProject } = usePage();
@@ -92,8 +98,10 @@ export function Main() {
         </div>
         {/* about me svg art rightside */}
         {page === "aboutMe" && (
-          <div className="aboutMe-svg">
-            
+          <div className="colorChanger">
+            <button onClick={() => setTheme("dark-blue")}>Blue</button>
+              <button onClick={() => setTheme("dark-green")}>Green</button>
+  <button onClick={() => setTheme("dark-red")}>Red</button>
           </div>
         )}
       </div>
