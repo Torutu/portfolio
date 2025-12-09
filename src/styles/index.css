@@ -49,6 +49,47 @@ box-sizing: border-box;
   position: relative;
 }
 
+/* .colorChanger{
+ border: 1px solid var(--primary-light-color);
+ width: 40%;
+ height: 40%;
+ margin-left: 30%;
+ margin-top: 30%;
+} */
+
+/* .colorChanger__button_blue {
+  background-color: blue;
+  display: inline-flex;
+  height: 80px;
+  width: 80px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.colorChanger__button_green {
+  background-color: green;
+  display: inline-flex;
+  height: 80px;
+  width: 80px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.colorChanger__button_red {
+  background-color: red;
+  display: inline-flex;
+  height: 80px;
+  width: 80px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  cursor: pointer;
+} */
+
 /* ===== MOBILE LAYOUT - COMPLETE OVERHAUL ===== */
 @media (max-width: 768px) {
   .layout {

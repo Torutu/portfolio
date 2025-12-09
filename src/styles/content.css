@@ -65,14 +65,115 @@
  opacity: 1;
 }
 
-.colorChanger{
- border: 1px solid var(--primary-light-color);
- width: 40%;
- height: 40%;
- margin-left: 30%;
- margin-top: 30%;
+/* Color Theme Changer Container */
+.colorChanger {
+  position: absolute;
+  top: 3%;
+  right: 3%;
+  display: flex;
+  gap: 0.8rem;
+  padding: 0.6rem;
+  background: var(--secondary-dark-color-fade);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--primary-light-color);
+  box-shadow: 0 4px 20px var(--secondary-light-color);
+  z-index: 100;
+  transition: all 0.3s ease;
 }
 
+/* .colorChanger:hover {
+  box-shadow: 0 2px 10px var(--primary-light-color);
+  border-color: var(--secondary-light-color);
+} */
+
+/* Color Theme Buttons - Futuristic Design */
+.colorChanger__button_blue,
+.colorChanger__button_green,
+.colorChanger__button_red {
+  width: 40px;
+  height: 40px;
+  /* border-radius: 50%; */
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.colorChanger__button_blue::before,
+.colorChanger__button_green::before,
+.colorChanger__button_red::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  /* border-radius: 50%; */
+  padding: 2px;
+  background: linear-gradient(45deg, transparent, currentColor, transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Blue Button */
+.colorChanger__button_blue {
+  background: linear-gradient(135deg, #0b306a 0%, #070d29 100%);
+  color: #00d9ff;
+  border: 1px solid #00d9ff8a;
+}
+
+.colorChanger__button_blue:hover {
+  transform: scale(1.15) ;
+  box-shadow: 0 0 25px rgba(0, 217, 255, 0.6), 0 0 50px rgba(0, 217, 255, 0.3);
+}
+
+.colorChanger__button_blue:hover::before {
+  opacity: 1;
+}
+
+.colorChanger__button_blue:active {
+  transform: scale(1.05) ;
+}
+
+/* Green Button */
+.colorChanger__button_green {
+  background: linear-gradient(135deg, #0f3d33 0%, #3ce07b70 100%);
+  color: #00ff88;
+  border: 1px solid #00ff888a;
+}
+
+.colorChanger__button_green:hover {
+  transform: scale(1.15) ;
+  box-shadow: 0 0 25px rgba(0, 255, 136, 0.6), 0 0 50px rgba(0, 255, 136, 0.3);
+}
+
+.colorChanger__button_green:hover::before {
+  opacity: 1;
+}
+
+.colorChanger__button_green:active {
+  transform: scale(1.05);
+}
+
+/* Red Button */
+.colorChanger__button_red {
+  background: linear-gradient(135deg, #bb0000 0%, #4d1f1f 100%);
+  color: #ff006e;
+  border: 1px solid #ff0006a8;
+}
+
+.colorChanger__button_red:hover {
+  transform: scale(1.15) ;
+  box-shadow: 0 0 25px rgba(255, 0, 110, 0.6), 0 0 50px rgba(255, 0, 110, 0.3);
+}
+
+.colorChanger__button_red:hover::before {
+  opacity: 1;
+}
+
+.colorChanger__button_red:active {
+  transform: scale(1.05);
+}
 
 /* Conditional fade-in animation */
 .rightSide__inner.animate-fadein {
@@ -986,5 +1087,25 @@
 
   .skill-item__name {
     font-size: 0.75rem;
+  }
+
+  /* Color Theme Changer on Mobile */
+  .colorChanger {
+    position: fixed;
+    top: auto;
+    bottom: calc(56px + 2%);
+    right: 2%;
+    left: auto;
+    gap: 0.5rem;
+    padding: 0.4rem;
+    background: rgba(10, 14, 39, 0.9);
+    z-index: 1001;
+  }
+
+  .colorChanger__button_blue,
+  .colorChanger__button_green,
+  .colorChanger__button_red {
+    width: 32px;
+    height: 32px;
   }
 }

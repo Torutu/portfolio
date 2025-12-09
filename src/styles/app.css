@@ -12,8 +12,8 @@
   --hover-color: #52cbbe67;
   --badge-color: #748eff;
   --tiny-text-color: #a5a5a5;
-  --background-dark-gradient: hsla(240,85%,5%,1);
-  --background-light-gradient: hsla(217,81%,23%,1);
+  --background-dark-gradient: #020218;
+  --background-light-gradient: #0b306a;
   --font-family: 'IBM Plex Mono', monospace;
   --calm-font-family: 'Lexend', sans-serif;
   --tiny-font-family: 'Outfit', sans-serif;
@@ -38,15 +38,15 @@
 }
 
 :root[data-theme="dark-green"] {
-  --primary-dark-color: #0a1f1a;
+  --primary-dark-color: #0a1f0b;
   --secondary-dark-color: #0f3d33;
-  --secondary-dark-color-fade: #0f3d3370;
-  --primary-light-color: #3af180;
+  --secondary-dark-color-fade: #09460470;
+  --primary-light-color: #25bb12;
   --header-primary-light-color: #f0f0f0;
-  --hover-color: #3ce07b70;
-  --badge-color: #2fd68a;
-  --background-dark-gradient: #0a1f1a;
-  --background-light-gradient: #0f3d33;
+  --hover-color: #24af1170;
+  --badge-color: #27ad23;
+  --background-dark-gradient: #0b1f0a;
+  --background-light-gradient: #0f3d15;
     --font-family: 'IBM Plex Mono', monospace;
   --calm-font-family: 'Lexend', sans-serif;
   --tiny-font-family: 'Outfit', sans-serif;

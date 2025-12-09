@@ -99,9 +99,9 @@ export function Main() {
         {/* about me svg art rightside */}
         {page === "aboutMe" && (
           <div className="colorChanger">
-            <button onClick={() => setTheme("dark-blue")}>Blue</button>
-              <button onClick={() => setTheme("dark-green")}>Green</button>
-  <button onClick={() => setTheme("dark-red")}>Red</button>
+            <button className="colorChanger__button_blue" onClick={() => setTheme("dark-blue")}></button>
+            <button className="colorChanger__button_green" onClick={() => setTheme("dark-green")}></button>
+            <button className="colorChanger__button_red" onClick={() => setTheme("dark-red")}></button>
           </div>
         )}
       </div>
