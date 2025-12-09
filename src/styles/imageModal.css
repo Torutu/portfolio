@@ -1,6 +1,3 @@
-/* Image Modal Styles */
-
-/* Thumbnail - Clickable image */
 .image-modal__thumbnail {
   cursor: pointer;
   transition: all 0.3s ease;
@@ -20,7 +17,6 @@
   transform: scale(0.98);
 }
 
-/* Overlay - Dark background */
 .image-modal__overlay {
   position: fixed;
   top: 0;
@@ -53,7 +49,6 @@
   }
 }
 
-/* Container - Holds enlarged image */
 .image-modal__container {
   position: relative;
   max-width: 90vw;
@@ -79,7 +74,6 @@
   }
 }
 
-/* Enlarged Image */
 .image-modal__enlarged {
   max-width: 90vw;
   max-height: 90vh;
@@ -89,19 +83,14 @@
   border-radius: 8px;
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
   border: 3px solid var(--primary-light-color);
-  /* Prevent image from being cut off or causing layout issues */
   display: block;
-  /* Force GPU acceleration */
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  /* Ensure smooth rendering */
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
 }
-
-/* Close Button */
 .image-modal__close {
   position: absolute;
   top: -15px;
@@ -121,7 +110,6 @@
   transition: all 0.3s ease;
   z-index: 10000;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-  /* Force GPU acceleration */
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
   backface-visibility: hidden;
@@ -142,19 +130,15 @@
 /* Mobile Responsive */
 @media (max-width: 768px) {
   .image-modal__overlay {
-    /* Better touch scrolling on mobile */
     overflow: auto;
     -webkit-overflow-scrolling: touch;
-    /* Prevent zoom issues */
-    touch-action: pan-x pan-y;
+    touch-action: auto;
   }
 
   .image-modal__container {
     max-width: 95vw;
     max-height: 95vh;
-    /* Ensure content stays visible when zoomed */
     margin: 5vh auto;
-    /* Prevent cutting off at viewport edges */
     padding: 10px;
     box-sizing: border-box;
   }
@@ -162,9 +146,7 @@
   .image-modal__enlarged {
     max-width: 95vw;
     max-height: 95vh;
-    /* Allow pinch-to-zoom on mobile without layout breaking */
     touch-action: pinch-zoom;
-    /* Smoother rendering on mobile */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -175,19 +157,16 @@
     font-size: 1.3rem;
     top: -12px;
     right: -12px;
-    /* Keep button visible when zoomed */
     position: fixed;
     top: 10px;
     right: 10px;
   }
   
-  /* Prevent backdrop blur on mobile for better performance */
   .image-modal__overlay {
     backdrop-filter: none;
   }
 }
 
-/* Prevent page scrolling when modal is open */
 body.modal-open {
   overflow: hidden;
   position: fixed;
