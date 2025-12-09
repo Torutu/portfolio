@@ -7,6 +7,7 @@
   border-radius: 8px;
   border: 2px solid var(--hover-color);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  will-change: transform;
 }
 
 .image-modal__thumbnail:hover {
@@ -34,6 +35,13 @@
   z-index: 9999;
   animation: fadeIn 0.3s ease;
   cursor: pointer;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  /* Force GPU acceleration */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 @keyframes fadeIn {
@@ -52,15 +60,21 @@
   max-height: 90vh;
   animation: zoomIn 0.3s ease;
   cursor: default;
+  /* Force GPU acceleration */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  will-change: transform;
 }
 
 @keyframes zoomIn {
   from {
-    transform: scale(0.8);
+    transform: scale(0.8) translateZ(0);
     opacity: 0;
   }
   to {
-    transform: scale(1);
+    transform: scale(1) translateZ(0);
     opacity: 1;
   }
 }
@@ -75,6 +89,16 @@
   border-radius: 8px;
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
   border: 3px solid var(--primary-light-color);
+  /* Prevent image from being cut off or causing layout issues */
+  display: block;
+  /* Force GPU acceleration */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  /* Ensure smooth rendering */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
 }
 
 /* Close Button */
@@ -97,27 +121,52 @@
   transition: all 0.3s ease;
   z-index: 10000;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  /* Force GPU acceleration */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  will-change: transform;
 }
 
 .image-modal__close:hover {
-  box-shadow: 0 0px 10px var(--primary-light-color);
-  transform: scale(1.1);
+  background: var(--hover-color);
+  transform: rotate(90deg) translateZ(0);
+  box-shadow: 0 6px 20px var(--secondary-light-color);
 }
 
 .image-modal__close:active {
-  transform: scale(0.95);
+  transform: rotate(90deg) scale(0.95) translateZ(0);
 }
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
+  .image-modal__overlay {
+    /* Better touch scrolling on mobile */
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    /* Prevent zoom issues */
+    touch-action: pan-x pan-y;
+  }
+
   .image-modal__container {
     max-width: 95vw;
     max-height: 95vh;
+    /* Ensure content stays visible when zoomed */
+    margin: 5vh auto;
+    /* Prevent cutting off at viewport edges */
+    padding: 10px;
+    box-sizing: border-box;
   }
 
   .image-modal__enlarged {
     max-width: 95vw;
     max-height: 95vh;
+    /* Allow pinch-to-zoom on mobile without layout breaking */
+    touch-action: pinch-zoom;
+    /* Smoother rendering on mobile */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   .image-modal__close {
@@ -126,5 +175,22 @@
     font-size: 1.3rem;
     top: -12px;
     right: -12px;
+    /* Keep button visible when zoomed */
+    position: fixed;
+    top: 10px;
+    right: 10px;
   }
+  
+  /* Prevent backdrop blur on mobile for better performance */
+  .image-modal__overlay {
+    backdrop-filter: none;
+  }
+}
+
+/* Prevent page scrolling when modal is open */
+body.modal-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
 }

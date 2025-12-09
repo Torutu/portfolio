@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/imageModal.css';
 
 interface ImageModalProps {
@@ -12,12 +12,45 @@ export const ImageModal: React.FC<ImageModalProps> = ({ src, alt, className = ''
 
   const openModal = () => {
     setIsOpen(true);
-    document.body.style.overflow = 'hidden'; // Prevent background scrolling
   };
 
   const closeModal = () => {
     setIsOpen(false);
-    document.body.style.overflow = 'auto'; // Restore scrolling
+  };
+
+  // Handle body scroll locking and class management
+  useEffect(() => {
+    if (isOpen) {
+      // Lock body scroll and add class
+      document.body.classList.add('modal-open');
+      document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.width = '100%';
+      document.body.style.height = '100%';
+    } else {
+      // Restore body scroll and remove class
+      document.body.classList.remove('modal-open');
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+      document.body.style.height = '';
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.classList.remove('modal-open');
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+      document.body.style.height = '';
+    };
+  }, [isOpen]);
+
+  // Prevent scrolling on the modal content itself
+  const handleModalClick = (e: React.MouseEvent) => {
+    if (e.target === e.currentTarget) {
+      closeModal();
+    }
   };
 
   return (
@@ -32,13 +65,17 @@ export const ImageModal: React.FC<ImageModalProps> = ({ src, alt, className = ''
 
       {/* Modal Overlay */}
       {isOpen && (
-        <div className="image-modal__overlay" onClick={closeModal}>
+        <div 
+          className="image-modal__overlay" 
+          onClick={handleModalClick}
+        >
           <div className="image-modal__container">
             <img 
               src={src} 
               alt={alt} 
               className="image-modal__enlarged"
               onClick={(e) => e.stopPropagation()} // Prevent closing when clicking image
+              draggable={false} // Prevent image dragging on mobile
             />
             <button 
               className="image-modal__close"
