@@ -1,0 +1,130 @@
+/* Image Modal Styles */
+
+/* Thumbnail - Clickable image */
+.image-modal__thumbnail {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  border: 2px solid var(--hover-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.image-modal__thumbnail:hover {
+  transform: scale(1.02);
+  border-color: var(--primary-light-color);
+  box-shadow: 0 6px 20px var(--secondary-light-color);
+}
+
+.image-modal__thumbnail:active {
+  transform: scale(0.98);
+}
+
+/* Overlay - Dark background */
+.image-modal__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Container - Holds enlarged image */
+.image-modal__container {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  animation: zoomIn 0.3s ease;
+  cursor: default;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Enlarged Image */
+.image-modal__enlarged {
+  max-width: 90vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+  border: 3px solid var(--primary-light-color);
+}
+
+/* Close Button */
+.image-modal__close {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  width: 40px;
+  height: 40px;
+  background: var(--primary-dark-color);
+  border: 2px solid var(--primary-light-color);
+  border-radius: 50%;
+  color: var(--primary-light-color);
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.image-modal__close:hover {
+  box-shadow: 0 0px 10px var(--primary-light-color);
+  transform: scale(1.1);
+}
+
+.image-modal__close:active {
+  transform: scale(0.95);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .image-modal__container {
+    max-width: 95vw;
+    max-height: 95vh;
+  }
+
+  .image-modal__enlarged {
+    max-width: 95vw;
+    max-height: 95vh;
+  }
+
+  .image-modal__close {
+    width: 35px;
+    height: 35px;
+    font-size: 1.3rem;
+    top: -12px;
+    right: -12px;
+  }
+}

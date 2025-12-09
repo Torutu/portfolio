@@ -1,4 +1,6 @@
 import { CollapsibleSection } from "../../utils/pageContext";
+import { ImageModal } from "../../components/ImageModal";
+import daggerforgeImg from "../../media/daggerforge.PNG";
 
 const whatIsDaggerforge = (
   <>
@@ -176,6 +178,11 @@ const CanvasIntegration = (
 
 const featureBreakdown = (
   <>
+    <ImageModal 
+      src={daggerforgeImg} 
+      alt="Daggerforge Plugin Interface" 
+      className="rightSideSection__img"
+    />
     <h1 className="rightSideSection__h1">Features</h1>
     {AdversaryBrowser}
     {EnvironmentBrowser}
