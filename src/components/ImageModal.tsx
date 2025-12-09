@@ -77,13 +77,6 @@ export const ImageModal: React.FC<ImageModalProps> = ({ src, alt, className = ''
               onClick={(e) => e.stopPropagation()} // Prevent closing when clicking image
               draggable={false} // Prevent image dragging on mobile
             />
-            <button 
-              className="image-modal__close"
-              onClick={closeModal}
-              aria-label="Close modal"
-            >
-              ✕
-            </button>
           </div>
         </div>
       )}
